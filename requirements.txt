@@ -1,0 +1,4 @@
+fitz==0.0.1.dev2
+razdel==0.5.0
+Requests==2.32.4
+selenium==4.33.0
