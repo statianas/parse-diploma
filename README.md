@@ -6,7 +6,7 @@
 ```console
 parse-diploma:~$ pip install requirements.txt
 ```
-### Парсер сайта [кафедры СП СПбГУ](https://se.math.spbu.ru/)
+### Парсер сайта [кафедры СП СПбГУ](https://se.math.spbu.ru/theses.html)
 Для того, чтобы запустить парсер достаточно вызвать скрипт `parser_web.py`.
 ```console
 parse-diploma:~$ python parser_web.py
