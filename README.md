@@ -7,9 +7,9 @@
 parse-diploma:~$ pip install requirements.txt
 ```
 ### Парсер сайта [кафедры СП СПбГУ](https://se.math.spbu.ru/theses.html)
-Для того, чтобы запустить парсер достаточно вызвать скрипт `parser_web.py`.
+Для того, чтобы запустить парсер достаточно вызвать скрипт `parser_web.py`
 ```console
-parse-diploma:~$ python parser_web.py
+parse-diploma:~$ python3 parser_web.py
 ```
 Этот скрипт:
 - Принимает куки
@@ -21,7 +21,7 @@ parse-diploma:~$ python parser_web.py
 ### Парсер сайта [ВКР ВШЭ](https://www.hse.ru/edu/vkr/)
 Для того, чтобы запустить парсер достаточно вызвать скрипт `parser_hse.py`
 ```console
-parse-diploma:~$ python parser_hse.py --year <year> --faculty <code>
+parse-diploma:~$ python3 parser_hse.py --year <year> --faculty <code>
 ```
 Соответствует поиску всех работ в **\<year\>** году факультета **\<code\>**. Коды факультетов можно посмотреть в файле `faculty_dict.json`
 
@@ -32,12 +32,12 @@ parse-diploma:~$ python parser_hse.py --year <year> --faculty <code>
 
 Для того, чтобы запустить парсер достаточно вызвать скрипт `parser_web_id.py`
 ```console
-parse-diploma:~$ python parser_web_id.py <start_id> <end_id>
+parse-diploma:~$ python3 parser_web_id.py <start_id> <end_id>
 ```
 ### Обработка текстов
 Для того, чтобы фильтровать артефакты в полученных текстах pdf и в дальнейшем использовать тексты необходима обработка и разбиение на небольшие куски. Чтобы выполнить данные этапы необхоодимо запустить скрипт `partition_preprocess.py`
 ```console
-parse-diploma:~$ python partition_preprocess.py --uni <'hse' or 'spbu'> --in-dir <in_dir> --out-dir <out_dir>
+parse-diploma:~$ python3 partition_preprocess.py --uni <'hse' or 'spbu'> --in-dir <in_dir> --out-dir <out_dir>
 ```
 ### Генерация текстов
 Для создания второй части датасета - сгенерированных текстов (моделью `qwen2.5vl:7b`), мы продолжаем первое предложение реального текста до абзаца среднего размера (700-900 символом без учета пробелов). 
@@ -48,12 +48,12 @@ parse-diploma:~$ python partition_preprocess.py --uni <'hse' or 'spbu'> --in-dir
 
 Для получения json **<output_json>** с уже обработанными id в директории **<downloads_dir>** необходимо запустить скрипт
 ```console
-parse-diploma/:~$ python utility/ids-collection.py <downloads_dir> <output_json>
+parse-diploma/:~$ python3 utility/ids-collection.py <downloads_dir> <output_json>
 ```
 
 Для получения json **<output_json>** с уже обработанными именами файлов в директории **<downloads_dir>** необходимо запустить скрипт
 ```console
-parse-diploma/:~$ python utility/name-collection.py <downloads_dir> <output_json>
+parse-diploma/:~$ python3 utility/name-collection.py <downloads_dir> <output_json>
 ```
 
 Для получения нескольких рандомных файлов для ручного просмотра и поиска артефактов запустите скрипт `get-random.py`
